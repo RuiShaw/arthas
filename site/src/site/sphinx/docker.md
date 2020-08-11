@@ -32,7 +32,7 @@ Docker
     `--' `--'`--' '--'   `--'   `--'  `--'`--' `--'`-----'
 
 
-    wiki: https://alibaba.github.io/arthas
+    wiki: https://arthas.aliyun.com/doc
     version: 3.0.5
     pid: 9
     time: 2018-12-18 11:30:36
@@ -41,13 +41,13 @@ Docker
 ## 诊断Docker里的Java进程
 
 ```sh
-docker exec -it  ${containerId} /bin/bash -c "wget https://alibaba.github.io/arthas/arthas-boot.jar && java -jar arthas-boot.jar"
+docker exec -it  ${containerId} /bin/bash -c "wget https://arthas.aliyun.com/arthas-boot.jar && java -jar arthas-boot.jar"
 ```
 
 ## 诊断k8s里容器里的Java进程
 
 ```sh
-kubectl exec -it ${pod} --container ${containerId} -- /bin/bash -c "wget https://alibaba.github.io/arthas/arthas-boot.jar && java -jar arthas-boot.jar"
+kubectl exec -it ${pod} --container ${containerId} -- /bin/bash -c "wget https://arthas.aliyun.com/arthas-boot.jar && java -jar arthas-boot.jar"
 ```
 
 ## 把Arthas安装到基础镜像里
@@ -61,4 +61,6 @@ FROM openjdk:8-jdk-alpine
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 ```
 
-[https://hub.docker.com/r/hengyunabc/arthas](https://hub.docker.com/r/hengyunabc/arthas)
+如果想指定版本，可以查看具体的tags：
+
+[https://hub.docker.com/r/hengyunabc/arthas/tags](https://hub.docker.com/r/hengyunabc/arthas/tags)
